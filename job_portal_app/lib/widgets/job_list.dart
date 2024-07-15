@@ -63,6 +63,13 @@ class _JobListState extends State<JobList> {
               children: [
                 Row(
                   children: [
+                    Image.asset(
+                      "assets/images/google_logo.png",
+                      width: 30,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
                       job["company_name"],
                       style: GoogleFonts.poppins(
@@ -78,6 +85,7 @@ class _JobListState extends State<JobList> {
                     Text(job["location"]),
                   ],
                 ),
+                SizedBox(height: 12),
                 Row(
                   children: [
                     Text(
@@ -90,7 +98,32 @@ class _JobListState extends State<JobList> {
                       style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
                     ),
                   ],
-                )
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Posted: ",
+                      style: GoogleFonts.poppins(
+                          color: Colors.black.withOpacity(0.5)),
+                    ),
+                    Text(
+                      job["start_date"],
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      "Deadline: ",
+                      style: GoogleFonts.poppins(
+                          color: Colors.black.withOpacity(0.5)),
+                    ),
+                    Text(
+                      job["end_date"],
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
               ],
             ),
           );
