@@ -39,11 +39,10 @@ class _JobListState extends State<JobList> {
           jobs = jsonData["jobs"];
         });
       } else {
-        throw Exception('Failed to load data');
+        ('Failed to load data');
       }
     } catch (e) {
       print('Error: $e');
-      rethrow;
     }
   }
 
