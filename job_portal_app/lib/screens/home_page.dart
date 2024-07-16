@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:job_portal_app/widgets/job_list.dart';
+import 'package:job_portal_app/widgets/job_upload.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

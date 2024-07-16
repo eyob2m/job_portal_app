@@ -24,6 +24,7 @@ class JobList extends FormRequest
         return [
             "title" => "string|required",
             "company_name" => "string|required",
+            "company_logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048",
             "description" => "string|required",
             "location" => "string|required",
             "salary" => "numeric|required",

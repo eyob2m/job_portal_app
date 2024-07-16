@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->string("company_name");
+            $table->string("company_logo")->nullable();
             $table->string("description");
             $table->string("location");
             $table->decimal("salary");

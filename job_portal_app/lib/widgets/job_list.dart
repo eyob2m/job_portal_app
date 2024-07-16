@@ -21,6 +21,7 @@ class _JobListState extends State<JobList> {
     fetchData();
   }
 
+  bool marked = false;
   List<dynamic> jobs = [];
   Future<void> fetchData() async {
     try {
@@ -83,6 +84,16 @@ class _JobListState extends State<JobList> {
                       size: 20,
                     ),
                     Text(job["location"]),
+                    Spacer(),
+                    GestureDetector(
+                        onTap: () => {
+                              setState(() {
+                                marked = !marked;
+                              })
+                            },
+                        child: Icon(marked
+                            ? Icons.bookmark_outline_outlined
+                            : Icons.favorite)),
                   ],
                 ),
                 SizedBox(height: 12),
