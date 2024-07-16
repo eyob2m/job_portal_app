@@ -1,9 +1,13 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
+import 'dart:ffi';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:job_portal_app/widgets/job_list.dart';
-import 'package:job_portal_app/widgets/job_upload.dart';
+import 'package:job_portal_app/screens/bottom_home_page.dart';
+import 'package:job_portal_app/widgets/app_colors.dart' as appcolors;
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -72,18 +76,52 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: "Search",
-                    prefixIcon: Icon(Icons.search_rounded),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide.none),
-                    contentPadding: EdgeInsets.zero,
-                    fillColor: Colors.grey.withOpacity(0.1),
-                    filled: true),
+              SizedBox(
+                child: Container(
+                  padding: EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/search_bg.png"),
+                          fit: BoxFit.fill),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 12),
+                      Text(
+                        "Search the job your looking for",
+                        style: GoogleFonts.poppins(
+                            color: Colors.white, fontSize: 14),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                            hintText: "Search",
+                            hintStyle: GoogleFonts.poppins(color: Colors.grey),
+                            prefixIcon: Icon(
+                              Icons.search_rounded,
+                              color: Colors.grey,
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide.none),
+                            contentPadding: EdgeInsets.zero,
+                            fillColor: Colors.white,
+                            filled: true),
+                      ),
+                      SizedBox(
+                        height: 45,
+                      )
+                    ],
+                  ),
+                ),
               ),
-              Expanded(child: JobList())
+              SizedBox(
+                height: 10,
+              ),
+              BottomHome()
             ],
           ),
         ),
