@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:job_portal_app/screens/show_list.dart';
 import 'package:job_portal_app/widgets/app_colors.dart' as appcolors;
+import 'package:job_portal_app/widgets/job_upload.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -116,7 +117,25 @@ class HomePage extends StatelessWidget {
               ),
               BottomHome(),
               Spacer(),
-              Center(child: Icon(Icons.add)),
+              Center(
+                  child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: appcolors.starColor,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => JobUpload()));
+                  },
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ),
+              )),
             ],
           ),
         ),
