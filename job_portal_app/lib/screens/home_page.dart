@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:job_portal_app/screens/bottom_home_page.dart';
+import 'package:job_portal_app/screens/show_list.dart';
 import 'package:job_portal_app/widgets/app_colors.dart' as appcolors;
 
 class HomePage extends StatelessWidget {
@@ -114,10 +114,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              BottomHome()
+              BottomHome(),
+              Spacer(),
+              Center(child: Icon(Icons.add)),
             ],
           ),
         ),
